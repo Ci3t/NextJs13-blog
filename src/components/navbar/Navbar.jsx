@@ -1,5 +1,8 @@
+"use client"
 import Link from 'next/link'
 import React from 'react'
+import styles from './page.module.css'
+import Button from '../button/Button';
 
 const links = [
     {
@@ -37,10 +40,16 @@ const links = [
 
 const Navbar = () => {
   return (
-    <div>
+    <div className={styles.container}>
+      <Link href={'/'} className={styles.logo}>Logo</Link>
+      <div className={styles.links}>
+
         {links.map(link=>(
-            <Link key={link.id} href={link.url}>{link.title}</Link>
-        ))}
+          <Link className={styles.link} key={link.id} href={link.url}>{link.title}</Link>
+          ))}
+        <Button text={'LogOut'} url='#' className={styles.logout} onClick={()=>{console.log('logged Out');}}/>
+          </div>
+      
     </div>
   )
 }

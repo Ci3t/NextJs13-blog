@@ -1,9 +1,9 @@
 import React from 'react'
-
-const Login = () => {
+import styles from "./page.module.css"
+const Register = () => {
   return (
-    <div>Login</div>
+    <div className={styles.container}>Register</div>
   )
 }
 
-export default Login
+export default Register
