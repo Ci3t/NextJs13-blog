@@ -12,3 +12,13 @@ export const GET = async (request, { params }) => {
     return new NextResponse("DB Error", { status: 500 });
   }
 };
+export const DELETE = async (request, { params }) => {
+  const { id } = params;
+  try {
+    await connect();
+    await Post.findByIdAndDelete(id);
+    return new NextResponse("Post Has been Deleted", { status: 200 });
+  } catch (error) {
+    return new NextResponse("DB Error", { status: 500 });
+  }
+};

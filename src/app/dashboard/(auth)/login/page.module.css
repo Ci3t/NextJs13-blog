@@ -63,6 +63,10 @@
   
   .google {
     background-color: rgba(228, 97, 50, 0.72);
+    width: 300px;
+    padding: 20px;
+    border: none;
+    border-radius: 10px;
   }
   
   .google:hover {
